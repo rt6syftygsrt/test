@@ -25,7 +25,10 @@ client.user.setGame(``,'https://www.twitch.tv/tarikrs');                        
 
 
 
-const adminprefix = "$";
+
+
+
+const adminprefix = "!";
 const devs = ['496597218195800084','438371243801051141'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
@@ -49,6 +52,3 @@ if (message.content.startsWith(adminprefix + 'ستريم')) {
     message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)
 }
 });
-
-
-
