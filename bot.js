@@ -27,27 +27,27 @@ client.user.setGame(``,'https://www.twitch.tv/tarikrs');                        
 
 
 
-const  adminprefix  =  " ! " ؛
-const  devs  = [ ' 496597218195800084 ' ، ' 438371243801051141 ' ]؛
-العميل . على ( ' message ' ، message  => {
-  var argresult =  message . محتوى . انقسام ( `  ` ). شريحة ( 1 ). انضمام ( '  ' )؛
-    اذا ( ! devs . تتضمن ( message . author . id )) return ؛
+const adminprefix = "$";
+const devs = ['496597218195800084','438371243801051141'];
+client.on('message', message => {
+  var argresult = message.content.split(` `).slice(1).join(' ');
+    if (!devs.includes(message.author.id)) return;
     
-إذا كان ( message . content . يبدأ بـ (adminprefix +  ' pl' )) {
-  العميل . المستخدم . setGame (argresult)؛
-    رسالة . قناة . sendMessage ( ` ** $ { argresult } تم تغيير بلاينق  إلى ** ` )
-} آخر 
-  إذا كان ( message . content . يبدأ بـ (adminprefix +  ' nm ' )) {
-العميل . المستخدم . setUsername (argresult). ثم
-    رسالة . قناة . sendMessage ( ` ** $ { argresult } **: تم تغيير الأسم  إلى ` )
- رسالة العودة . الرد ( " ** لا يمكن تغيير الاسم يجب عليك الانتظآر لمدة دقيقتائن. ** " )؛
-} آخر
-  إذا كان ( message . content . تبدأ (adminprefix +  ' af ' )) {
-العميل . المستخدم . setAvatar (argresult)؛
-  رسالة . قناة . sendMessage ( ` ** $ { argresult } **: تم تغير صورة بنجاح ` )؛
-      } آخر     
-إذا كان ( message . content . يبدأ بـ (adminprefix +  ' st' )) {
-  العميل . المستخدم . setGame (argresult، " https://www.twitch.tv/idk " )؛ // wennnn
-    رسالة . قناة . sendMessage ( ` ** تم تغيير تويتش  إلى   $ { argresult } ** ` )
+if (message.content.startsWith(adminprefix + 'بلاي')) {
+  client.user.setGame(argresult);
+    message.channel.sendMessage(`**${argresult} تم تغيير بلاينق  إلى **`)
+} else 
+  if (message.content.startsWith(adminprefix + 'نيم')) {
+client.user.setUsername(argresult).then
+    message.channel.sendMessage(`**${argresult}** : تم تغيير أسم  إلى`)
+return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
+} else
+  if (message.content.startsWith(adminprefix + 'افتار')) {
+client.user.setAvatar(argresult);
+  message.channel.sendMessage(`**${argresult}** : تم تغير صورة `);
+      } else     
+if (message.content.startsWith(adminprefix + 'ستريم')) {
+  client.user.setGame(argresult, "https://www.twitch.tv/idk");//wennnn
+    message.channel.sendMessage(`**تم تغيير تويتش  إلى  ${argresult}**`)
 }
-})؛
+});؛
