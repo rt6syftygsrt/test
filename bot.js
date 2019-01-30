@@ -25,13 +25,30 @@ client.user.setGame(``,'https://www.twitch.tv/tarikrs');                        
 
 
 
-         
-
-client.on('تثبيت', () => {
-var x = client.channels.get("504807381373419541");
-if (x) x.join();
-});
 
 
 
-
+const  adminprefix  =  " ! " ؛
+const  devs  = [ ' 496597218195800084 ' ، ' 438371243801051141 ' ]؛
+العميل . على ( ' message ' ، message  => {
+  var argresult =  message . محتوى . انقسام ( `  ` ). شريحة ( 1 ). انضمام ( '  ' )؛
+    اذا ( ! devs . تتضمن ( message . author . id )) return ؛
+    
+إذا كان ( message . content . يبدأ بـ (adminprefix +  ' pl' )) {
+  العميل . المستخدم . setGame (argresult)؛
+    رسالة . قناة . sendMessage ( ` ** $ { argresult } تم تغيير بلاينق البوت إلى ** ` )
+} آخر 
+  إذا كان ( message . content . يبدأ بـ (adminprefix +  ' nm ' )) {
+العميل . المستخدم . setUsername (argresult). ثم
+    رسالة . قناة . sendMessage ( ` ** $ { argresult } **: تم تغيير أسم البوت إلى ` )
+ رسالة العودة . الرد ( " ** لا يمكن تغيير الاسم يجب عليك الانتظآر لمدة ساعتين. ** " )؛
+} آخر
+  إذا كان ( message . content . تبدأ (adminprefix +  ' af ' )) {
+العميل . المستخدم . setAvatar (argresult)؛
+  رسالة . قناة . sendMessage ( ` ** $ { argresult } **: تم تغير صورة البوت ` )؛
+      } آخر     
+إذا كان ( message . content . يبدأ بـ (adminprefix +  ' st' )) {
+  العميل . المستخدم . setGame (argresult، " https://www.twitch.tv/idk " )؛ // wennnn
+    رسالة . قناة . sendMessage ( ` ** تم تغيير تويتش البوت إلى   $ { argresult } ** ` )
+}
+})؛
