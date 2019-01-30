@@ -27,7 +27,6 @@ client.user.setGame(``,'https://www.twitch.tv/tarikrs');                        
 
 
 
-
 const  adminprefix  =  " ! " ؛
 const  devs  = [ ' 496597218195800084 ' ، ' 438371243801051141 ' ]؛
 العميل . على ( ' message ' ، message  => {
@@ -36,19 +35,19 @@ const  devs  = [ ' 496597218195800084 ' ، ' 438371243801051141 ' ]؛
     
 إذا كان ( message . content . يبدأ بـ (adminprefix +  ' pl' )) {
   العميل . المستخدم . setGame (argresult)؛
-    رسالة . قناة . sendMessage ( ` ** $ { argresult } تم تغيير بلاينق البوت إلى ** ` )
+    رسالة . قناة . sendMessage ( ` ** $ { argresult } تم تغيير بلاينق  إلى ** ` )
 } آخر 
   إذا كان ( message . content . يبدأ بـ (adminprefix +  ' nm ' )) {
 العميل . المستخدم . setUsername (argresult). ثم
-    رسالة . قناة . sendMessage ( ` ** $ { argresult } **: تم تغيير أسم البوت إلى ` )
- رسالة العودة . الرد ( " ** لا يمكن تغيير الاسم يجب عليك الانتظآر لمدة ساعتين. ** " )؛
+    رسالة . قناة . sendMessage ( ` ** $ { argresult } **: تم تغيير الأسم  إلى ` )
+ رسالة العودة . الرد ( " ** لا يمكن تغيير الاسم يجب عليك الانتظآر لمدة دقيقتائن. ** " )؛
 } آخر
   إذا كان ( message . content . تبدأ (adminprefix +  ' af ' )) {
 العميل . المستخدم . setAvatar (argresult)؛
-  رسالة . قناة . sendMessage ( ` ** $ { argresult } **: تم تغير صورة البوت ` )؛
+  رسالة . قناة . sendMessage ( ` ** $ { argresult } **: تم تغير صورة بنجاح ` )؛
       } آخر     
 إذا كان ( message . content . يبدأ بـ (adminprefix +  ' st' )) {
   العميل . المستخدم . setGame (argresult، " https://www.twitch.tv/idk " )؛ // wennnn
-    رسالة . قناة . sendMessage ( ` ** تم تغيير تويتش البوت إلى   $ { argresult } ** ` )
+    رسالة . قناة . sendMessage ( ` ** تم تغيير تويتش  إلى   $ { argresult } ** ` )
 }
 })؛
