@@ -1,5 +1,30 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js');
 const client = new Discord.Client();
+
+
+
+
+client.login('NTM5ODMxNTQwMzY5MzI2MTEw.DzLoSQ.rUOrapCf-YXEEqS0YaI5uh9o0dQ'); 
+
+
+
+client.on('ready',  () => {
+  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'); 
+  console.log('by safa7');
+  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+  console.log(`Logged in as  * [ " ${client.user.username} " ] servers! [ " ${client.guilds.size} " ]`);
+  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+  console.log('is online')
+client.user.setStatus("dnd");
+});
+
+// playing
+client.on('ready', () => {                           
+client.user.setGame(``,'https://www.twitch.tv/tarikrs');                                                                                                                                                                                                                                                                                                                                                                                                                             client.user.setGame(`-help | On 20 Servers`,'https://www.twitch.tv/v5bz');
+});          
+
+
+
 var prefix = "$";
 client.on("message", message => {
 
@@ -16,17 +41,3 @@ client.on("message", message => {
 });
 
 
-client.on('ready', () => {
-   console.log(`----------------`);
-      console.log(`Desert Bot- Script By : i1Suhaib`);
-        console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : i1Suhaib ' `);
-    console.log(`----------------`);
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`#bc | osama tech`,"http://twitch.tv/S-F")
-client.user.setStatus("dnd")
-});
-
-
-
-client.login(" NTM5ODMxNTQwMzY5MzI2MTEw.DzLoSQ.rUOrapCf-YXEEqS0YaI5uh9o0dQ");
